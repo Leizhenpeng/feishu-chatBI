@@ -1,0 +1,30 @@
+version: "3.4"
+
+services:
+
+  datagpt_dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: build
+    volumes:
+      - .:/app
+    expose:
+      - "5004"
+    ports:
+      - "5004:5004"
+    entrypoint: uvicorn main:app --host 0.0.0.0 --port 5004 --reload
+    stdin_open: true
+    tty: true
+
+    environment:
+      - OPENAI_API_KEY=YOUR_API_KEY
+      - ENV_FLAG=DEV
+      - APP_ID=YOUR_FEISHU_APP_ID
+      - APP_SECRET=YOUR_FEISHU_APP_SECRET
+      - FEISHU_API_VERBOSE=True
+      - POSTGRES_HOST=YOUR_POSTGRES_HOST
+      - POSTGRES_PORT=YOUR_POSTGRES_PORT
+      - POSTGRES_USER=YOUR_POSTGRES_USER
+      - POSTGRES_PASSWORD=YOUR_POSTGRES_PASSWORD
+      - POSTGRES_DATABASE=YOUR_POSTGRES_DATABASE_NAME

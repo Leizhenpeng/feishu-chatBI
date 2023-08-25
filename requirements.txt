@@ -1,0 +1,31 @@
+pymilvus
+openai
+fastapi
+uvicorn
+tiktoken
+pydantic
+tenacity
+PyPDF2
+docx2txt
+python-pptx
+pinecone-client
+python-multipart
+arrow
+nltk
+sqlalchemy
+psycopg2-binary
+langchain
+stripe
+python-dateutil
+tabulate
+codeinterpreterapi==0.0.11
+jupyter_kernel_gateway
+psutil
+matplotlib
+seaborn
+plotly
+# alibabacloud_dingtalk
+httpx
+openpyxl
+# codeboxapi==0.0.11
+
