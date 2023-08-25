@@ -104,7 +104,8 @@ class ChatSessionFeishu(object):
                 image_path=saved_file_path,
                 upload_body=models.UploadImageBody(
                     image_type='message'
-                )
+                ),
+                tenant_access_token=self.tenant_access_token
             )
             feishu_repo.send_message(
                 receive_id_type="chat_id",

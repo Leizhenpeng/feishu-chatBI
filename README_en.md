@@ -1,19 +1,8 @@
 # Feishu DataGPT(Code Interpreter)
 
-这是一个将[Code Interpreter](https://github.com/shroominic/codeinterpreter-api)接入飞书的尝试。在demo中，后端执行python的Codebox容器使用的是未开源的[Codebox](https://github.com/shroominic/codebox-api/tree/main)。 后续自研的Codebox也将更新后同步。
-## Demo 
-支持与飞书中文档的交互（需要确保机器人有权限）。同时也支持上传文档、文件的交互。
-### 与云文档交互
-![](imgs/feishu_file.gif)
 
-### 使用python画图
-![](imgs/plot.gif)
 
 ## 使用Docker部署服务端 
-
-### 配置环境变量
-
-### docker启动
 ```
 docker-compose -f docker_dev.yml build
 docker-compose -f docker_dev.yml up
@@ -30,7 +19,6 @@ APP相关信息：
 ![app信息凭证](imgs/app_info.png)
 
 增加清空会话按钮
-![事件订阅](imgs/events.png)
 ![button](imgs/renew_session_btn.png)
 
 ## 快速试用
