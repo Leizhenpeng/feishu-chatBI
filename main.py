@@ -48,7 +48,7 @@ async def on_webhook(request: Request, background_tasks: BackgroundTasks):
     match event_type:
         case "im.message.receive_v1":
             input = feishu_models.OnNewMessageInput.parse_obj(body)
-            background_tasks.add_task(feishu_repos.process_new_message, input=input)
+            background_tasks.add_task(process_new_message, input=input, app_info=configs.DEFAULT_FEISHU_APP_INFO)
             return 
         case "application.bot.menu_v6":
             try:

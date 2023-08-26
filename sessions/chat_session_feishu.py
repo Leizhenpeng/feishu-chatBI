@@ -20,12 +20,8 @@ from custom_codeinterpreter_session import InstantMessageCallbackHandler
 import asyncio
 from utils.feishu_util import renew_tenant_access_token,get_tenant_access_token
 import time
+from configs import DEFAULT_FEISHU_APP_INFO
 
-DEFAULT_FEISHU_APP_INFO= FeishuAppInfo(
-    app_id = os.environ.get('APP_ID'),
-    app_secret = os.environ.get('APP_SECRET'),
-    openai_api_key=os.environ.get('OPENAI_API_KEY')
-)
 
 class ChatSessionFeishu(object):
     TAG = "ChatSessionFeishu"
