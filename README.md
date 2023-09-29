@@ -1,41 +1,40 @@
-# Feishu DataGPT(Code Interpreter)
+# Feishu DataGPT (Code Interpreter)
 
-这是一个将[Code Interpreter](https://github.com/shroominic/codeinterpreter-api)接入飞书的尝试。在demo中，后端执行python的Codebox容器使用的是未开源的[Codebox](https://github.com/shroominic/codebox-api/tree/main)。 后续自研的Codebox也将更新后同步。
-## Demo 
-支持与飞书中文档的交互（需要确保机器人有权限）。同时也支持上传文档、文件的交互。
-### 与云文档交互
-![](imgs/feishu_file.gif)
+Welcome to Feishu DataGPT, a Code Interpreter integration with Feishu. This project attempts to seamlessly integrate [Code Interpreter](https://github.com/shroominic/codeinterpreter-api) into the Feishu platform. In this demo, we leverage a non-open source [Codebox](https://github.com/shroominic/codebox-api/tree/main) for executing Python code. Future updates will include our in-house Codebox.
 
-### 使用python画图
-![](imgs/plot.gif)
+## Demo
 
-## 使用Docker部署服务端 
+Our integration offers interactive capabilities within Feishu documents (ensure your bot has the necessary permissions). It also supports document and file uploads.
 
-### 配置环境变量
+### Interaction with Feishu Docs
+![Feishu Document Interaction](imgs/feishu_file.gif)
 
-### docker启动
-```
+### Creating Python Plots
+![Python Plotting](imgs/plot.gif)
+
+## Deploying the Server with Docker
+
+### Environment Configuration
+
+### Launching Docker
+```shell
 docker-compose -f docker_dev.yml build
 docker-compose -f docker_dev.yml up
 ```
 
-## 部署飞书机器人及接口
-1. 使用[飞书开放平台](https://open.feishu.cn/app/)，创建企业自建应用
-2. 添加应用能力：机器人
-3. 权限管理中，开通“消息与群组”和“云文档”中的所有权限
-4. 事件订阅中填写请求地址配置。添加事件：接收消息im.message.receive_v1
-5. 发布版本后在飞书中搜索使用
+## Deploying the Feishu Bot and API
 
-APP相关信息：
-![app信息凭证](imgs/app_info.png)
+1. Using the [Feishu Open Platform](https://open.feishu.cn/app/), create a custom enterprise app.
+2. Add the app capability: Bot.
+3. In the permission management section, grant all permissions in "Messages & Groups" and "Cloud Docs."
+4. Configure the request URL in Event Subscriptions. Add the event: Receive Message `im.message.receive_v1`.
+5. Search for and use the app in Feishu after publishing.
 
-增加清空会话按钮
-![事件订阅](imgs/events.png)
-![button](imgs/renew_session_btn.png)
+App Credentials:
+![App Credentials](imgs/app_info.png)
 
-## 快速试用
-免费试用api，可以填充到事件订阅地址中。
-url：
-```
-http://aaas.world:5004/feishu_robot_webhook_trial?openai_api_key=YOUR_OPENAI_API_KEY&app_id=YOUR_FEISHU_APP_ID&app_secret=YOUR_FEISHU_APP_SECRET
-```
+Adding a Clear Session Button:
+![Event Subscriptions](imgs/events.png)
+![Clear Session Button](imgs/renew_session_btn.png)
+
+Feel free to explore our Feishu DataGPT integration further. If you have any questions or need assistance, please don't hesitate to reach out.
